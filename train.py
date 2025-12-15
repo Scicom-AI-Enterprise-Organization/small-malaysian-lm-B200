@@ -12,9 +12,13 @@ from contextlib import nullcontext
 import torch.distributed as dist
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
-from transformer_engine import pytorch as te
-from transformer_engine.common import recipe
-from transformer_engine.pytorch.cross_entropy import parallel_cross_entropy
+try:
+    from transformer_engine import pytorch as te
+    from transformer_engine.common import recipe
+    from transformer_engine.pytorch.cross_entropy import parallel_cross_entropy
+    
+except Exception as e:
+    print('transformer engine is not available.')
 from transformers import (
     set_seed,
     get_wsd_schedule,

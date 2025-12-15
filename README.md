@@ -27,6 +27,20 @@ We want to compare,
 19. FP32 weight, all linear, layer norm and rms norm layers converted to TransformerEngine NVFP4 recipe FP4, BF16 activation.
 20. BF16 weight, all linear, layer norm and rms norm layers converted to TransformerEngine NVFP4 recipe FP4, BF16 activation.
 
+### H100 Baseline
+
+1. FP32 weight, BF16 activation.
+2. BF16 weight, BF16 activation.
+
+**But we did not finished the training because we just want to see throughput per second and MFU baseline**.
+
+### H200 Baseline
+
+1. FP32 weight, BF16 activation.
+2. BF16 weight, BF16 activation.
+
+**But we did not finished the training because we just want to see throughput per second and MFU baseline**.
+
 ## Why we no longer try to train on 5090
 
 1. Linear layer provided not yet support to backward, https://github.com/NVIDIA/TransformerEngine/issues/1654
